@@ -69,8 +69,8 @@ var polygonData = L.geoJSON(polygonJson, {
     layer.bindPopup(`<b>Name: </b>` + feature.properties.name);
   },
   style: {
-    fillColor: "#ffffff80",
-    fillOpacity: 1,
+    fillColor: "#fff",
+    fillOpacity: 0.8,
     color: "#fff",
   },
 }).addTo(map);
