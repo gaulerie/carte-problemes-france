@@ -97,8 +97,8 @@ var baseMaps = {
 var overlayMaps = {
   // "First Marker": singleMarker,
   // "Second Marker": secondMarker,
-  "Points": pointData,
-  "Zones": polygonData,
+  Points: pointData,
+  Zones: polygonData,
   // wms: wms,
 };
 // map.removeLayer(singleMarker)
@@ -120,3 +120,13 @@ map.on("mousemove", function (e) {
 /*==============================================
                    STYLE CUSTOMIZATION
    ================================================*/
+
+// Pour les couches polygonales
+polygonData.on("click", function (e) {
+  $("#sidebar").addClass("displayed");
+});
+
+// Pour les points
+pointData.on("click", function (e) {
+  $("#sidebar").addClass("displayed");
+});

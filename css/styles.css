@@ -1,10 +1,16 @@
 :root {
-  --sidebar-width: 0px;
+  --sidebar-width: 350px;
   --background: #111111;
 }
 
-*{
+.displayed {
+  opacity: 100 !important;
+  z-index: 1 !important;
+}
+
+* {
   user-select: none;
+  font-family: "San Francisco", Helvetica, Arial, san-serif;
 }
 
 body {
@@ -19,13 +25,23 @@ body {
 }
 
 #sidebar {
-  width: var(--sidebar-width);
-  height: 100%;
+  width: calc(var(--sidebar-width) - 40px);
+  height: calc(100vh - 40px);
+  background: #fff;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 #map {
-  width: calc(100% - var(--sidebar-width));
+  width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
 .coordinate {
