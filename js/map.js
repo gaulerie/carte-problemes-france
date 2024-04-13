@@ -44,26 +44,35 @@ var wms = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
 /*==============================================
                        MARKER
    ================================================*/
-var myIcon = L.icon({
-  iconUrl: "img/red_marker.png",
-  iconSize: [40, 40],
-});
-var singleMarker = L.marker([45.764, 4.8357], { icon: myIcon, draggable: true });
+// var myIcon = L.icon({
+//   iconUrl: "img/red_marker.png",
+//   iconSize: [40, 40],
+// });
+// var singleMarker = L.marker([45.764, 4.8357], { icon: myIcon, draggable: true });
 
-var popup = singleMarker.bindPopup("This is EVROPA babe. " + singleMarker.getLatLng()).openPopup();
-popup.addTo(map);
+// var popup = singleMarker.bindPopup("This is EVROPA babe. " + singleMarker.getLatLng()).openPopup();
+// popup.addTo(map);
 
-var secondMarker = L.marker([48.8566, 2.3522], { icon: myIcon, draggable: true });
+// var secondMarker = L.marker([48.8566, 2.3522], { icon: myIcon, draggable: true });
 
-var popup2 = secondMarker.bindPopup("This is EVROPA babe 2. " + singleMarker.getLatLng()).openPopup();
-popup2.addTo(map);
+// var popup2 = secondMarker.bindPopup("This is EVROPA babe 2. " + singleMarker.getLatLng()).openPopup();
+// popup2.addTo(map);
 
-console.log(singleMarker.toGeoJSON());
+// console.log(singleMarker.toGeoJSON());
 
 /*==============================================
                GEOJSON
    ================================================*/
-var pointData = L.geoJSON(pointJson).addTo(map);
+var pointData = L.geoJSON(pointJson, {
+  onEachFeature: function (feature, layer) {
+    layer.bindPopup(`<b>Name: </b>` + feature.properties.name);
+  },
+  style: {
+    fillColor: "#fff",
+    fillOpacity: 0.8,
+    color: "#fff",
+  },
+}).addTo(map);
 var polygonData = L.geoJSON(polygonJson, {
   onEachFeature: function (feature, layer) {
     layer.bindPopup(`<b>Name: </b>` + feature.properties.name);
@@ -86,8 +95,8 @@ var baseMaps = {
 };
 
 var overlayMaps = {
-  "First Marker": singleMarker,
-  "Second Marker": secondMarker,
+  // "First Marker": singleMarker,
+  // "Second Marker": secondMarker,
   "Point Data": pointData,
   "Polygon Data": polygonData,
   wms: wms,
