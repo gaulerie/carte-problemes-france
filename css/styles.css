@@ -1,0 +1,42 @@
+:root {
+  --sidebar-width: 0px;
+  --background: #111111;
+}
+
+p, h1, span{
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+}
+
+#sidebar {
+  width: var(--sidebar-width);
+  height: 100%;
+}
+
+#map {
+  width: calc(100% - var(--sidebar-width));
+  height: 100%;
+}
+
+.coordinate {
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: var(--background);
+  color: #fff;
+  border: 1px solid #111111bb;
+  border-radius: 0px;
+}
