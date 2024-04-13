@@ -97,9 +97,9 @@ var baseMaps = {
 var overlayMaps = {
   // "First Marker": singleMarker,
   // "Second Marker": secondMarker,
-  "Point Data": pointData,
-  "Polygon Data": polygonData,
-  wms: wms,
+  "Points": pointData,
+  "Zones": polygonData,
+  // wms: wms,
 };
 // map.removeLayer(singleMarker)
 
@@ -108,13 +108,13 @@ L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
 /*==============================================
                    LEAFLET EVENTS
    ================================================*/
-map.on("mouseover", function () {
-  console.log("your mouse is over the map");
-});
+// map.on("mouseover", function () {
+//   console.log("your mouse is over the map");
+// });
 
 map.on("mousemove", function (e) {
   document.getElementsByClassName("coordinate")[0].innerHTML = "lat: " + e.latlng.lat + "lng: " + e.latlng.lng;
-  console.log("lat: " + e.latlng.lat, "lng: " + e.latlng.lng);
+  // console.log("lat: " + e.latlng.lat, "lng: " + e.latlng.lng);
 });
 
 /*==============================================

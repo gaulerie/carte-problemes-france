@@ -3,7 +3,7 @@
   --background: #111111;
 }
 
-p, h1, span{
+*{
   user-select: none;
 }
 
