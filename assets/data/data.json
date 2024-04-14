@@ -1,0 +1,56 @@
+{
+  "Données": [
+    {
+      "Région": "Auvergne-Rhône-Alpes"
+    },
+    {
+      "Région": "Bourgogne-Franche-Comté"
+    },
+    {
+      "Région": "Bretagne"
+    },
+    {
+      "Région": "Centre-Val de Loire"
+    },
+    {
+      "Région": "Corse"
+    },
+    {
+      "Région": "Grand Est"
+    },
+    {
+      "Région": "Hauts-de-France"
+    },
+    {
+      "Région": "Île-de-France"
+    },
+    {
+      "Région": "Normandie"
+    },
+    {
+      "Région": "Nouvelle-Aquitaine"
+    },
+    {
+      "Région": "Occitanie"
+    },
+    {
+      "Région": "Pays de la Loire"
+    },
+    {
+      "Région": "Provence-Alpes-Côte d'Azur",
+      "Latitude": "4.8357",
+      "Longitude": "45.764",
+      "Ville": "Marseille",
+      "Rue": "Rue du oui",
+      "Nom": "Islam",
+      "Prénom": "Mohammed",
+      "Nationalités": "Algérien",
+      "Ethnicité": "Syrien",
+      "Âge": "22",
+      "Acte - Titre": "Viol",
+      "Acte - Description": "A commis un viol",
+      "Date d'entrée en France": "2020"
+    }
+  ],
+  "Analyse": []
+}
