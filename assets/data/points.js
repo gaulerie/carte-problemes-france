@@ -1,7 +1,7 @@
 var pointJson = {
   type: "FeatureCollection",
   features: [
-    { type: "Feature", properties: {}, geometry: { type: "Point", coordinates: [4.8357, 45.7640] } },
-    { type: "Feature", properties: {}, geometry: { type: "Point", coordinates: [2.3522, 48.8566] } },
+    { type: "Feature", properties: { id: 1 }, geometry: { type: "Point", coordinates: [4.8357, 45.764] } },
+    { type: "Feature", properties: { id: 2 }, geometry: { type: "Point", coordinates: [2.3522, 48.8566] } },
   ],
 };
