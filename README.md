@@ -5,7 +5,7 @@ Ce projet vise à présenter une carte interactive des personnes causant des pro
 ## 📌 Fonctionnalités
 
 - **Carte Interactive :** Explorez facilement les différentes régions de France et localisez les personnes concernées.
-- **Informations Détaillées :** Accédez à des détails tels que le nom, prénom, nationalité, date de naissance, actes commis, etc.
+- **Informations Détaillées :** Accédez à des détails précis pour chaque personne.
 - **Filtrage :** Utilisez des filtres pour affiner votre recherche par région, date de naissance, nationalité, etc.
 
 ## 🚀 Comment Contribuer
