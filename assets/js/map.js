@@ -1,5 +1,11 @@
 var map = L.map("map").setView([47, 5], 6);
 
+// GeoJSON vide initial
+var pointJson = {
+  type: "FeatureCollection",
+  features: [],
+};
+
 // Layers
 
 //osm layer
@@ -45,11 +51,43 @@ var pointJson = {
 
 var pointData; // Variable pour stocker les données GeoJSON
 
-// Envoyer une requête GET à votre Web App
+var pointJson = {
+  type: "FeatureCollection",
+  features: [],
+};
+
 fetch("https://script.google.com/macros/s/AKfycbyBCceivdsdI5utTYqA1gYBEiP78OBkjGs9ZTDNL6G7yGQIWsx1HqGQ6yi8uoa79RA1/exec")
   .then((response) => response.json()) // Convertir la réponse en JSON
   .then((data) => {
-    pointData = data;
+    // Créer un tableau pour stocker les fonctionnalités GeoJSON des points
+    var pointFeatures = [];
+    data.forEach((line, index) => {
+      var latitude = parseFloat(line["Latitude"]);
+      var longitude = parseFloat(line["Longitude"]);
+      // Créer une nouvelle fonctionnalité avec les données de latitude et de longitude
+      var newFeature = {
+        type: "Feature",
+        properties: { id: index },
+        geometry: { type: "Point", coordinates: [longitude, latitude] }, // les coordonnées sont [longitude, latitude]
+      };
+      // Ajouter la nouvelle fonctionnalité au tableau des fonctionnalités
+      pointFeatures.push(newFeature);
+    });
+    // Créer un objet GeoJSON à partir des fonctionnalités des points
+    var pointGeoJSON = {
+      type: "FeatureCollection",
+      features: pointFeatures,
+    };
+    // Ajouter les données des points à la carte
+    var pointData = L.geoJSON(pointGeoJSON, {
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup(`<b>Name: </b>` + feature.properties.name);
+        layer.on("click", function () {
+          console.log("Index du point:", feature.properties.id);
+          updateSidebar(pointData, feature.properties.id - 1);
+        });
+      },
+    }).addTo(map);
   })
   .catch((error) => {
     console.error("Erreur lors de la récupération des données :", error);
@@ -93,11 +131,6 @@ var pointData = L.geoJSON(pointJson, {
       updateSidebar(pointData, feature.properties.id - 1);
     });
   },
-  style: {
-    fillColor: "#fff",
-    fillOpacity: 0.8,
-    color: "#fff",
-  },
 }).addTo(map);
 
 var polygonData = L.geoJSON(polygonJson, {
@@ -107,11 +140,6 @@ var polygonData = L.geoJSON(polygonJson, {
       console.log("Index du point:", feature.properties.id);
       updateSidebar(pointData, feature.properties.id - 1);
     });
-  },
-  style: {
-    fillColor: "#fff",
-    fillOpacity: 0.8,
-    color: "#fff",
   },
 }).addTo(map);
 

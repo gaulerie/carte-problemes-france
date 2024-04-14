@@ -1,53 +1,3 @@
-:root {
-  --sidebar-width: 400px;
-  --background: #111111;
-  --link-cursor: url(../../../assets/cursors/Link.cur), pointer;
-  --default-cursor: url(../../../assets/cursors/Normal.cur), default;
-  --text-cursor: url(../../../assets/cursors/Text.cur), text;
-}
-
-.displayed {
-  opacity: 100 !important;
-  z-index: 1 !important;
-}
-
-.swiped {
-  transform: translateX(var(--sidebar-width));
-}
-
-* {
-  user-select: none;
-  font-family: "Open Sans";
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-  transition: 0.3s ease-in-out;
-  font-size: 1rem;
-  max-width: 100vw;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -webkit-tap-highlight-color: rgba(218, 124, 61, 0.5);
-  box-sizing: border-box;
-}
-
-*:hover {
-  transition: 0.3s ease-in-out;
-}
-
-*:not(:hover) {
-  transition: 0.3s ease-in-out;
-}
-
-p {
-  margin: 0;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--background);
-}
-
 #app {
   height: 100vh;
   display: flex;
@@ -56,7 +6,7 @@ body {
 #sidebar {
   width: calc(var(--sidebar-width));
   height: calc(100vh);
-  background: #fff;
+  background: var(--second);
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -82,7 +32,7 @@ body {
 
 #sidebar-close-btn {
   position: absolute;
-  background: #fff;
+  background: var(--second);
   border-radius: 100px;
   width: 40px;
   height: 40px;
@@ -161,11 +111,24 @@ body {
 
 .leaflet-popup-content-wrapper {
   background-color: var(--background);
-  color: #fff;
+  color: var(--second);
   border: 1px solid #111111bb;
   border-radius: 0px;
 }
 
-.leaflet-popup {
-  display: none;
+.leaflet-control,
+.leaflet-control-zoom-out,
+.leaflet-control-zoom-in {
+  background: var(--background) !important;
+  border: none !important;
+  color: var(--second) !important;
+}
+
+.leaflet-control span {
+  color: var(--second) !important;
+}
+
+.leaflet-control-layers-separator {
+  background: var(--second);
+  border-top-width: 0.1px;
 }
