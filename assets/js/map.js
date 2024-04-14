@@ -116,3 +116,4 @@ L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
 //   document.getElementsByClassName("coordinate")[0].innerHTML = "lat: " + e.latlng.lat + "lng: " + e.latlng.lng;
   // console.log("lat: " + e.latlng.lat, "lng: " + e.latlng.lng);
 // });
+
