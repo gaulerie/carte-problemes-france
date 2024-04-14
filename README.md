@@ -12,14 +12,16 @@ Ce projet vise à présenter une carte interactive des personnes causant des pro
 
 1. **Forkez** ce repo.
 2. **Clônez** le repo forké localement sur votre machine.
-3. **Ajoutez** les données des personnes concernées au format CSV en suivant le modèle fourni.
+3. **Ajoutez** les fonctions qui vous intéressent.
 4. **Envoyez** une demande d'extraction.
+
+Contactez-moi sur [Discord](https://discord.com/users/1204087298694582323) pour toute contribution à la base de données.
 
 ## ⚙️ Technologies Utilisées
 Frontend: HTML, CSS, JavaScript (bibliothèque de cartographie)
-Backend: Node.js, Express.js
-Base de Données: MongoDB
-Cartographie: Leaflet.js, Mapbox
+Base de Données: [Pierre Sautarel](https://twitter.com/FrDesouche), Google Sheets
+Librairies : jQuery, Google Fonts, IonIcons
+Cartographie: Leaflet.js, OpenStreetMap
 
 ## 📂 Structure des Données
 
