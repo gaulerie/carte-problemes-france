@@ -1,6 +1,9 @@
 :root {
-  --sidebar-width: 350px;
+  --sidebar-width: 400px;
   --background: #111111;
+  --link-cursor: url(../../../assets/cursors/Link.cur), pointer;
+  --default-cursor: url(../../../assets/cursors/Normal.cur), default;
+  --text-cursor: url(../../../assets/cursors/Text.cur), text;
 }
 
 .displayed {
@@ -10,7 +13,29 @@
 
 * {
   user-select: none;
-  font-family: "San Francisco", Helvetica, Arial, san-serif;
+  font-family: "Open Sans";
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  transition: 0.3s ease-in-out;
+  font-size: 1rem;
+  max-width: 100vw;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-tap-highlight-color: rgba(218, 124, 61, 0.5);
+  box-sizing: border-box;
+}
+
+*:hover {
+  transition: 0.3s ease-in-out;
+}
+
+*:not(:hover) {
+  transition: 0.3s ease-in-out;
+}
+
+p {
+  margin: 0;
 }
 
 body {
@@ -25,8 +50,8 @@ body {
 }
 
 #sidebar {
-  width: calc(var(--sidebar-width) - 40px);
-  height: calc(100vh - 40px);
+  width: calc(var(--sidebar-width));
+  height: calc(100vh);
   background: #fff;
   position: absolute;
   z-index: -1;
@@ -35,7 +60,81 @@ body {
   top: 0;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  gap: 10px;
+}
+
+#sidebar p {
+  padding: 0 20px;
+  color: var(--background);
+}
+
+#sidebar div p:first-child {
+  padding-right: 0;
+}
+
+#sidebar div p:not(:first-child) {
+  padding: 0;
+}
+
+#sidebar-close-btn {
+  position: absolute;
+  background: #fff;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  right: 10px;
+  cursor: var(--link-cursor);
+}
+
+#sidebar-close-btn ion-icon {
+  font-size: 30px;
+}
+
+#name,
+#dates,
+#address,
+#origin,
+#acts,
+.act {
+  display: flex;
+  gap: 5px;
+}
+
+#name p {
+  font-size: 1.375rem;
+}
+.age,
+.countryEntranceDate {
+  font-size: 13px;
+}
+
+.countryEntranceDate::before {
+  content: "Entrée sur le territoire en ";
+}
+
+#address {
+  padding: 0 20px;
+}
+
+#acts {
+  flex-direction: column;
+  gap: 15px;
+}
+
+.act {
+  flex-direction: column;
+}
+
+.act p {
+  padding: 0 20px !important;
+}
+
+.actDate {
+  font-size: 1.375rem;
 }
 
 #map {
@@ -50,9 +149,19 @@ body {
   right: 50%;
 }
 
+.sidebarimg {
+  width: 100%;
+  height: calc(var(--sidebar-width) * (9 / 16));
+  background: rgba(15, 15, 15, 0.15);
+}
+
 .leaflet-popup-content-wrapper {
   background-color: var(--background);
   color: #fff;
   border: 1px solid #111111bb;
   border-radius: 0px;
+}
+
+.leaflet-popup {
+  display: none;
 }

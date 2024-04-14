@@ -11,12 +11,53 @@
     <script defer src="./data/points.js"></script>
     <script defer src="./data/zones.js"></script>
     <script defer src="./js/map.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
   </head>
 
   <body>
     <div id="app">
       <div id="sidebar">
-        <h1>Nom Prénom</h1>
+        <div id="sidebar-close-btn"><ion-icon name="close-outline"></ion-icon></div>
+        <div class="sidebarimg"></div>
+        <div id="name">
+          <p class="surname">Abdel</p>
+          <p class="name">Kalash</p>
+        </div>
+        <div id="dates">
+          <p class="age">21</p>
+          <p class="countryEntranceDate">2017</p>
+        </div>
+        <div id="origin">
+          <p class="nationalities">Français, Algérien</p>
+          <p class="ethnicities">Berbère</p>
+        </div>
+        <div id="acts">
+          <div class="act">
+            <p class="actDate">2017</p>
+            <p class="actTitle">Agression au couteau</p>
+            <p class="actDescription">A attaqué une personne âgée avec un couteau.</p>
+          </div>
+          <div class="act">
+            <p class="actDate">2018</p>
+            <p class="actTitle">Agression au couteau</p>
+            <p class="actDescription">A attaqué une personne âgée avec un couteau.</p>
+          </div>
+          <div class="act">
+            <p class="actDate">2021</p>
+            <p class="actTitle">Agression au couteau</p>
+            <p class="actDescription">A attaqué une personne âgée avec un couteau.</p>
+          </div>
+        </div>
+        <div id="address">
+          <ion-icon name="location-outline"></ion-icon>
+          <p class="street">1, Rue du Test</p>
+          <p class="region">Île-de-France</p>
+          <p class="city">Paris</p>
+        </div>
       </div>
       <div id="map">
         <div class="leaflet-control coordinate"></div>
