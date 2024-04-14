@@ -39,3 +39,10 @@ body {
   padding: 0;
   background: var(--background);
 }
+
+.separator {
+  width: calc(var(--sidebar-width));
+  height: 1px;
+  background: var(--third);
+  margin: 8px 0;
+}

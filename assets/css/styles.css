@@ -6,7 +6,7 @@
 #sidebar {
   width: calc(var(--sidebar-width));
   height: calc(100vh);
-  background: var(--second);
+  background: var(--background);
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -14,12 +14,17 @@
   top: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 #sidebar p {
-  padding: 0 20px;
-  color: var(--background);
+  padding: 0 25px;
+  color: var(--second);
+}
+
+#sidebar ion-icon {
+  font-size: 25px;
+  color: var(--second);
 }
 
 #sidebar div p:first-child {
@@ -32,8 +37,9 @@
 
 #sidebar-close-btn {
   position: absolute;
-  background: var(--second);
+  background: var(--background);
   border-radius: 100px;
+  border: 1px solid var(--third);
   width: 40px;
   height: 40px;
   display: flex;
@@ -44,26 +50,44 @@
   cursor: var(--link-cursor);
 }
 
-#sidebar-close-btn ion-icon {
-  font-size: 30px;
-}
-
 #name,
 #dates,
 #address,
 #origin,
 #acts,
-.act {
+.act,
+#coords {
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
+}
+
+#name {
+  margin-top: 10px;
 }
 
 #name p {
   font-size: 1.375rem;
 }
 .birthdate,
-.countryEntranceDate {
-  font-size: 13px;
+.countryEntranceDate,
+.nationalities,
+.actTitle,
+.actDescription {
+  font-size: 15px;
+}
+
+.nationalities {
+  margin-top: 5px;
+}
+
+#dates p::after {
+  content: "|";
+  padding-left: 5px;
+}
+
+#dates p:last-child::after {
+  content: "";
 }
 
 .countryEntranceDate::before {
@@ -71,7 +95,21 @@
 }
 
 #address {
-  padding: 0 20px;
+  padding: 0 25px;
+  align-items: center;
+}
+
+#address p {
+  width: fit-content;
+}
+
+#address p::after {
+  content: "|";
+  padding-left: 5px;
+}
+
+#address p:last-child::after {
+  content: "";
 }
 
 #acts {
@@ -84,11 +122,20 @@
 }
 
 .act p {
-  padding: 0 20px !important;
+  padding: 0 25px !important;
 }
 
 .actDate {
-  font-size: 1.375rem;
+  font-size: 1.225rem;
+}
+
+#coords {
+  padding-left: 25px;
+  margin-top: 10px;
+}
+
+.latitude::after {
+  content: ",";
 }
 
 #map {
@@ -103,10 +150,22 @@
   right: 50%;
 }
 
+.personType {
+  position: absolute;
+  right: 10px;
+  top: calc(var(--sidebar-width) * (9 / 16) - 50px);
+  border-radius: 30px;
+  background: var(--background);
+  padding: 8px 15px;
+  border: 1px solid var(--third);
+}
+
 .sidebarimg {
   width: 100%;
   height: calc(var(--sidebar-width) * (9 / 16));
   background: rgba(15, 15, 15, 0.15);
+  background-size: cover !important;
+  background-position: center !important;
 }
 
 .leaflet-popup-content-wrapper {
@@ -131,4 +190,12 @@
 .leaflet-control-layers-separator {
   background: var(--second);
   border-top-width: 0.1px;
+}
+
+#credits{
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 15px;
+  color: var(--second);
 }

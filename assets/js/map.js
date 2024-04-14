@@ -3,7 +3,6 @@ var map = L.map("map").setView([47, 5], 6);
 // GeoJSON vide initial
 var pointJson = {
   type: "FeatureCollection",
-  features: [],
 };
 
 // Layers
@@ -43,48 +42,45 @@ googleStreets.addTo(map);
 
 var pointJson = {
   type: "FeatureCollection",
-  features: [
-    { type: "Feature", properties: { id: 1 }, geometry: { type: "Point", coordinates: [4.8357, 45.764] } },
-    { type: "Feature", properties: { id: 2 }, geometry: { type: "Point", coordinates: [2.3522, 48.8566] } },
-  ],
-};
-
-var pointData; // Variable pour stocker les données GeoJSON
-
-var pointJson = {
-  type: "FeatureCollection",
   features: [],
 };
 
 fetch("https://script.google.com/macros/s/AKfycbyBCceivdsdI5utTYqA1gYBEiP78OBkjGs9ZTDNL6G7yGQIWsx1HqGQ6yi8uoa79RA1/exec")
-  .then((response) => response.json()) // Convertir la réponse en JSON
+  .then((response) => response.json())
   .then((data) => {
-    // Créer un tableau pour stocker les fonctionnalités GeoJSON des points
     var pointFeatures = [];
     data.forEach((line, index) => {
       var latitude = parseFloat(line["Latitude"]);
       var longitude = parseFloat(line["Longitude"]);
-      // Créer une nouvelle fonctionnalité avec les données de latitude et de longitude
       var newFeature = {
         type: "Feature",
         properties: { id: index },
-        geometry: { type: "Point", coordinates: [longitude, latitude] }, // les coordonnées sont [longitude, latitude]
+        geometry: { type: "Point", coordinates: [longitude, latitude] },
       };
-      // Ajouter la nouvelle fonctionnalité au tableau des fonctionnalités
       pointFeatures.push(newFeature);
     });
-    // Créer un objet GeoJSON à partir des fonctionnalités des points
     var pointGeoJSON = {
       type: "FeatureCollection",
       features: pointFeatures,
     };
-    // Ajouter les données des points à la carte
-    var pointData = L.geoJSON(pointGeoJSON, {
+    pointData = L.geoJSON(pointGeoJSON, {
       onEachFeature: function (feature, layer) {
-        layer.bindPopup(`<b>Name: </b>` + feature.properties.name);
+        // layer.bindPopup(`<p>Name: </p>` + feature.properties.id);
         layer.on("click", function () {
-          console.log("Index du point:", feature.properties.id);
-          updateSidebar(pointData, feature.properties.id - 1);
+          updateSidebar(data, feature.properties.id);
+          $("#sidebar").addClass("displayed");
+          $(".leaflet-control-zoom").addClass("swiped");
+        });
+      },
+    }).addTo(map);
+
+    polygonData = L.geoJSON(polygonJson, {
+      onEachFeature: function (feature, layer) {
+        // layer.bindPopup(`<p>Name: </p>` + feature.properties.id);
+        layer.on("click", function () {
+          updateSidebar(pointData, feature.properties.id);
+          $("#sidebar").addClass("displayed");
+          $(".leaflet-control-zoom").addClass("swiped");
         });
       },
     }).addTo(map);
@@ -94,7 +90,6 @@ fetch("https://script.google.com/macros/s/AKfycbyBCceivdsdI5utTYqA1gYBEiP78OBkjG
   });
 
 function updateSidebar(data, index) {
-  // Vérifier si l'index spécifié est valide
   if (index >= 0 && index < data.length) {
     $(".surname").text(data[index]["Nom"]);
     $(".name").text(data[index]["Prénom"]);
@@ -116,29 +111,36 @@ function updateSidebar(data, index) {
     }
 
     $(".street").text(data[index]["Rue"]);
-    $(".region").text(data[index]["Région"]);
+    $(".latitude").text(data[index]["Latitude"]);
+    $(".longitude").text(data[index]["Longitude"]);
+    $(".personType").text(data[index]["Type"]);
+    // $(".region").text(data[index]["Région"]);
     $(".city").text(data[index]["Ville"]);
+    // $(".sidebarimg").css((background = "url(" + data[index]["Image"] + ");");
+    $(".sidebarimg").css("background-image", "url(" + data[index]["Image"] + ")");
   } else {
-    console.error("Index spécifié invalide.");
+    console.error("Index spécifié invalide. Index:", index);
   }
 }
 
 var pointData = L.geoJSON(pointJson, {
   onEachFeature: function (feature, layer) {
-    layer.bindPopup(`<b>Name: </b>` + feature.properties.name);
+    // layer.bindPopup(`<p>Name: </p>` + feature.properties.id);
     layer.on("click", function () {
-      console.log("Index du point:", feature.properties.id);
-      updateSidebar(pointData, feature.properties.id - 1);
+      updateSidebar(pointData, feature.properties.id);
+      $("#sidebar").addClass("displayed");
+      $(".leaflet-control-zoom").addClass("swiped");
     });
   },
 }).addTo(map);
 
 var polygonData = L.geoJSON(polygonJson, {
   onEachFeature: function (feature, layer) {
-    layer.bindPopup(`<b>Name: </b>` + feature.properties.name);
+    // layer.bindPopup(`<p>Name: </p>` + feature.properties.id);
     layer.on("click", function () {
-      console.log("Index du point:", feature.properties.id);
-      updateSidebar(pointData, feature.properties.id - 1);
+      updateSidebar(pointData, feature.properties.id);
+      $("#sidebar").addClass("displayed");
+      $(".leaflet-control-zoom").addClass("swiped");
     });
   },
 }).addTo(map);
@@ -153,24 +155,12 @@ var baseMaps = {
 };
 
 var overlayMaps = {
-  Points: pointData,
+  // Points: pointData,
   // Zones: polygonData,
   // wms: wms,
 };
 
 L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
-
-// Marker Style
-var greenIcon = L.icon({
-  iconUrl: "leaf-green.png",
-  shadowUrl: "leaf-shadow.png",
-
-  iconSize: [38, 95],
-  shadowSize: [50, 64],
-  iconAnchor: [22, 94],
-  shadowAnchor: [4, 62],
-  popupAnchor: [-3, -76],
-});
 
 // Events
 
