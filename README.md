@@ -17,9 +17,9 @@ Ce projet vise à présenter une carte interactive des personnes causant des pro
 
 ## ⚙️ Technologies Utilisées
 Frontend: HTML, CSS, JavaScript (bibliothèque de cartographie)
-Backend: Node.js, Express.js
-Base de Données: MongoDB
-Cartographie: Leaflet.js, Mapbox
+Base de Données: [Pierre Sautarel](https://twitter.com/FrDesouche), Google Sheets
+Librairies : jQuery, Google Fonts, IonIcons
+Cartographie: Leaflet.js, OpenStreetMap
 
 ## 📂 Structure des Données
 
