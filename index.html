@@ -9,12 +9,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-16" />
     <meta name="language" content="French" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>777 Spots</title>
-    <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon" />
+    <title>Carte</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.jpg" type="image/x-icon" />
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
     <link rel="stylesheet" href="./assets/css/light.css" id="darkmodestylesheet" />
     <link rel="stylesheet" href="./assets/css/common.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
@@ -25,7 +24,7 @@
     <script defer src="./assets/js/darkmode.js"></script>
     <script defer src="./assets/js/preloader.js"></script>
     <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script defer src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script defer src="./assets/data/zones.js"></script>
     <script defer src="./assets/js/map.js"></script>
     <script defer src="./assets/js/anim.js"></script>
 
@@ -53,19 +52,43 @@
       <div id="sidebar">
         <div id="sidebar-close-btn"><ion-icon name="close-outline"></ion-icon></div>
         <div class="sidebarimg"></div>
-        <div class="labelType"></div>
-        <div id="basicInfo">
-          <p class="title"></p>
-          <p class="note"></p>
-          <div class="inline">
-            <p class="id"></p>
-            <a class="googleMapsLink" target="_blank">Link</a>
+        <div class="personType"></div>
+        <div id="name">
+          <p class="surname"></p>
+          <p class="name"></p>
+        </div>
+        <div id="dates">
+          <p class="birthdate"></p>
+          <p class="countryEntranceDate"></p>
+        </div>
+        <div id="origin">
+          <p class="nationalities"></p>
+          <p class="ethnicities"></p>
+        </div>
+        <div class="separator"></div>
+        <div id="acts">
+          <div class="act">
+            <p class="actDate"></p>
+            <p class="actTitle"></p>
+            <p class="actDescription"></p>
+          </div>
+          <div class="act">
+            <p class="actDate"></p>
+            <p class="actTitle"></p>
+            <p class="actDescription"></p>
+          </div>
+          <div class="act">
+            <p class="actDate"></p>
+            <p class="actTitle"></p>
+            <p class="actDescription"></p>
           </div>
         </div>
         <div class="separator"></div>
         <div id="address">
           <ion-icon name="location-outline"></ion-icon>
-          <p class="prefecture"></p>
+          <p class="street"></p>
+          <p class="city"></p>
+          <!-- <p class="region"></p> -->
         </div>
         <div id="coords">
           <ion-icon name="compass-outline"></ion-icon>
@@ -76,7 +99,7 @@
       <div id="map">
         <div class="leaflet-control coordinate"></div>
       </div>
-      <!-- <a href="https://twitter.com/" target="_blank" id="credits">@[créer twitter]</a> -->
+      <a href="https://twitter.com/" target="_blank" id="credits">@[créer twitter]</a>
     </div>
   </body>
 </html>
