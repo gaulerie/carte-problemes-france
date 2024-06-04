@@ -1,46 +1,41 @@
-# 🌍 Carte des Problèmes en France 🚨
+# 📸 Carte des Photo Spots au Japon 🇯🇵
 
-Ce projet vise à présenter une carte interactive des personnes causant des problèmes en France, regroupant des informations pertinentes sur chacune d'elles.
+Ce projet vise à présenter une carte interactive des 777 meilleurs photo spots au Japon, couvrant l'ensemble du territoire avec des informations supplémentaires pour chaque lieu.
 
 ## 📌 Fonctionnalités
 
-- **Carte Interactive :** Explorez facilement les différentes régions de France et localisez les personnes concernées.
-- **Informations Détaillées :** Accédez à des détails précis pour chaque personne.
-- **Filtrage :** Utilisez des filtres pour affiner votre recherche par région, date de naissance, nationalité, etc.
+- **Carte Interactive :** Explorez facilement les différentes régions du Japon et découvrez les meilleurs spots pour la photographie.
+- **Informations Détaillées :** Accédez à des détails précis pour chaque spot, incluant les coordonnées GPS, un lien vers la photo recommandée, et le lien Google Maps du lieu.
+- **Menu Latéral :** Utilisez le menu pour obtenir des informations supplémentaires et naviguer entre les différents spots.
 
 ## 🚀 Comment Contribuer
 
 1. **Forkez** ce repo.
 2. **Clônez** le repo forké localement sur votre machine.
-3. **Ajoutez** les fonctions qui vous intéressent.
+3. **Ajoutez** les fonctionnalités ou informations supplémentaires qui vous intéressent.
 4. **Envoyez** une demande d'extraction.
 
 Contactez-moi sur [Discord](https://discord.com/users/1204087298694582323) pour toute contribution à la base de données.
 
 ## ⚙️ Technologies Utilisées
 Frontend: HTML, CSS, JavaScript (bibliothèque de cartographie)
-Base de Données: [Pierre Sautarel](https://twitter.com/FrDesouche), Google Sheets
+Base de Données: Google Sheets
 Librairies : jQuery, Google Fonts, IonIcons
 Cartographie: Leaflet.js, OpenStreetMap
 
 ## 📂 Structure des Données
 
-Les données sont organisées comme suit dans un fichier CSV :
+Les données sont organisées comme suit dans un fichier Google Sheets :
 
-- **Région**
+- **Préfecture**
 - **Latitude**
 - **Longitude**
 - **Ville**
-- **Rue**
-- **Nom**
-- **Prénom**
-- **Nationalités**
-- **Ethnicité**
-- **Date de Naissance**
-- **Méfaits - Date**
-- **Méfaits - Titre**
-- **Méfaits - Description**
-- **Date d'entrée en France**
+- **Nom du Spot**
+- **Description**
+- **Coordonnées GPS**
+- **Lien Photo**
+- **Lien Google Maps**
 
 ## 🤝 Contribution
 

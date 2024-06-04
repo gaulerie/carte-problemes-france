@@ -2,7 +2,7 @@
 map.on("popupclose", function (e) {
   $("#sidebar").removeClass("displayed");
   setTimeout(() => {
-    $(".leaflet-control-zoom").removeClass("swiped");
+    // $(".leaflet-control-zoom").removeClass("swiped");
   }, 300);
 });
 
@@ -11,7 +11,7 @@ $("#popup-close-btn").click(function () {
   map.closePopup();
   $("#sidebar").removeClass("displayed");
   setTimeout(() => {
-    $(".leaflet-control-zoom").removeClass("swiped");
+    // $(".leaflet-control-zoom").removeClass("swiped");
   }, 300);
 });
 
@@ -19,6 +19,6 @@ $("#popup-close-btn").click(function () {
 $("#sidebar-close-btn").click(function () {
   $("#sidebar").removeClass("displayed");
   setTimeout(() => {
-    $(".leaflet-control-zoom").removeClass("swiped");
+    // $(".leaflet-control-zoom").removeClass("swiped");
   }, 300);
 });
