@@ -1,47 +1,48 @@
-# 🌍 Carte des Problèmes en France 🚨
+# 🌍 Map of Issues in France 🚨
 
-Ce projet vise à présenter une carte interactive des personnes causant des problèmes en France, regroupant des informations pertinentes sur chacune d'elles.
+This project aims to present an interactive map of individuals causing issues in France, compiling relevant information about each person.
 
-## 📌 Fonctionnalités
+## 📌 Features
 
-- **Carte Interactive :** Explorez facilement les différentes régions de France et localisez les personnes concernées.
-- **Informations Détaillées :** Accédez à des détails précis pour chaque personne.
-- **Filtrage :** Utilisez des filtres pour affiner votre recherche par région, date de naissance, nationalité, etc.
+- **Interactive Map:** Easily explore different regions of France and locate the individuals concerned.
+- **Detailed Information:** Access precise details for each individual.
+- **Filtering:** Use filters to refine your search by region, birth date, nationality, etc.
 
-## 🚀 Comment Contribuer
+## 🚀 How to Contribute
 
-1. **Forkez** ce repo.
-2. **Clônez** le repo forké localement sur votre machine.
-3. **Ajoutez** les fonctions qui vous intéressent.
-4. **Envoyez** une demande d'extraction.
+1. **Fork** this repo.
+2. **Clone** the forked repo locally to your machine.
+3. **Add** the features that interest you.
+4. **Send** a pull request.
 
-Contactez-moi sur [Discord](https://discord.com/users/1204087298694582323) pour toute contribution à la base de données.
+Contact me on [Discord](https://discord.com/users/1204087298694582323) for any contributions to the database.
 
-## ⚙️ Technologies Utilisées
-Frontend: HTML, CSS, JavaScript (bibliothèque de cartographie)
-Base de Données: [Pierre Sautarel](https://twitter.com/FrDesouche), Google Sheets
-Librairies : jQuery, Google Fonts, IonIcons
-Cartographie: Leaflet.js, OpenStreetMap, LeafletMarkerCluster
+## ⚙️ Technologies Used
 
-## 📂 Structure des Données
+Frontend: HTML, CSS, JavaScript (mapping library)  
+Database: [Pierre Sautarel](https://twitter.com/FrDesouche), Google Sheets  
+Libraries: jQuery, Google Fonts, IonIcons  
+Mapping: Leaflet.js, OpenStreetMap, LeafletMarkerCluster
 
-Les données sont organisées comme suit dans un fichier CSV :
+## 📂 Data Structure
 
-- **Région**
+The data is organized as follows in a CSV file:
+
+- **Region**
 - **Latitude**
 - **Longitude**
-- **Ville**
-- **Rue**
-- **Nom**
-- **Prénom**
-- **Nationalités**
-- **Ethnicité**
-- **Date de Naissance**
-- **Méfaits - Date**
-- **Méfaits - Titre**
-- **Méfaits - Description**
-- **Date d'entrée en France**
+- **City**
+- **Street**
+- **Last Name**
+- **First Name**
+- **Nationalities**
+- **Ethnicity**
+- **Birth Date**
+- **Offenses - Date**
+- **Offenses - Title**
+- **Offenses - Description**
+- **Date of Entry into France**
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! N'hésitez pas à signaler des problèmes, à proposer des fonctionnalités ou à envoyer des demandes d'extraction.
+Contributions are welcome! Feel free to report issues, propose features, or send pull requests.
