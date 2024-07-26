@@ -69,6 +69,7 @@
 #name p {
   font-size: 1.375rem;
 }
+
 .birthdate,
 .countryEntranceDate,
 .nationalities,
@@ -192,7 +193,20 @@
   border-top-width: 0.1px;
 }
 
-#credits{
+.circle-marker {
+  background: var(--background);
+  color: var(--second);
+  border: 1px solid var(--third);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+#credits {
   position: fixed;
   bottom: 10px;
   left: 10px;
